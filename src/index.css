@@ -169,7 +169,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
   z-index: 100;
   transition: var(--transition-smooth);
   background: rgba(255, 255, 255, 0.8);
@@ -189,9 +189,10 @@ a {
 }
 
 .navbar-logo-img {
-  height: 60px;
+  height: 70px;
   width: auto;
   object-fit: contain;
+  margin: -5px 0;
   transition: transform 0.3s ease;
 }
 
