@@ -124,7 +124,9 @@ function App() {
       {/* Navbar */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} style={{ boxShadow: scrolled ? '0 5px 20px rgba(0,0,0,0.05)' : 'none' }}>
         <div className="container">
-          <div className="logo">AVARE</div>
+          <a href="#" className="logo-link">
+            <img src="/navbar-logo.png" alt="AVARE" className="navbar-logo-img" />
+          </a>
           <div className="nav-links">
             <a href="#about">Tentang Produk</a>
             <a href="#education">Edukasi</a>
