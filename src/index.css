@@ -825,12 +825,42 @@ footer {
     display: none;
   }
   
+  .navbar-logo-img {
+    height: 50px;
+  }
+  
+  .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .marquee-track span {
+    font-size: 0.9rem;
+  }
+
+  .checkout-modal {
+    padding: 1.5rem;
   }
   
   section {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
+  }
+  
+  .article-grid, .triple-action {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
