@@ -22,7 +22,7 @@ const articles = [
     id: 1,
     category: 'Health & Science',
     title: 'Mengapa Daun Jambu Biji Efektif untuk Pertolongan Pertama pada Luka? Ini Penjelasan Medisnya!',
-    readTime: '3 Menit',
+    date: '14 Juli 2026',
     content: `Selama turun-temurun, daun jambu biji sering digunakan masyarakat sebagai obat herbal alternatif. Namun, tahukah Anda apa yang terjadi secara medis ketika ekstrak daun jambu biji diaplikasikan pada luka terbuka seperti luka bakar ringan atau lecet?
 
 Secara ilmiah, daun jambu biji kaya akan senyawa aktif seperti tannin, flavonoid, dan polifenol. Senyawa-senyawa ini bekerja sebagai agen antibakteri alami yang sangat kuat. Ketika kulit kita mengalami luka terbuka, risiko terbesar yang dihadapi adalah kolonisasi bakteri (seperti Staphylococcus aureus) yang bisa memicu infeksi, pembengkakan, hingga memperlama proses penyembuhan. Ekstrak daun jambu biji langsung bekerja membentuk pertahanan luar untuk menghambat pertumbuhan bakteri tersebut.
@@ -35,7 +35,7 @@ Hebatnya lagi, tidak seperti antiseptik kimia konvensional yang terkadang bersif
     id: 2,
     category: 'First Aid Tips',
     title: 'Jangan Dioles Kecap atau Odol! Ini Cara Tepat Menangani Luka Bakar Ringan di Rumah',
-    readTime: '2 Menit',
+    date: '10 Juli 2026',
     content: `Pernahkah Anda refleks mengoleskan kecap, odol, atau mentega saat tidak sengaja terkena cipratan minyak panas atau knalpot? Jika iya, sebaiknya hentikan kebiasaan keliru ini sekarang juga.
 
 Mengoleskan bahan dapur pada luka bakar justru dapat memerangkap panas di dalam kulit dan memicu infeksi bakteri karena bahan-bahan tersebut tidak steril. Lalu, bagaimana langkah pertolongan pertama (P3K) yang benar secara medis?
@@ -53,7 +53,7 @@ Selalu sediakan everyday rescue gel yang andal di dalam tas atau kotak obat ruma
     id: 3,
     category: 'Skincare & Healing',
     title: 'Mengenal Triple-Action Formula: Kunci Pemulihan Skin Barrier yang Rusak akibat Luka',
-    readTime: '3 Menit',
+    date: '5 Juli 2026',
     content: `Penyembuhan luka ringan bukan sekadar membuat luka tersebut kering, melainkan bagaimana memastikan seluruh fase regenerasi jaringan kulit berjalan secara maksimal tanpa meninggalkan bekas yang mengganggu. Di sinilah pentingnya peran Triple-Action Formula.
 
 Formula sinergis ini menggabungkan tiga kekuatan utama untuk merawat kulit yang cedera:
@@ -302,7 +302,7 @@ function App() {
                 <div className="article-content">
                   <div className="article-category">{article.category}</div>
                   <h3 className="article-title">{article.title}</h3>
-                  <div className="article-meta">Estimasi: {article.readTime}</div>
+                  <div className="article-meta">Diterbitkan: {article.date}</div>
                   <p className="article-text">{article.excerpt}</p>
                 </div>
               </motion.article>
@@ -331,7 +331,7 @@ function App() {
               <button className="modal-close" onClick={() => setSelectedArticle(null)}><X size={24} /></button>
               <div className="modal-category">{selectedArticle.category}</div>
               <h2 className="modal-title">{selectedArticle.title}</h2>
-              <div className="modal-meta">{selectedArticle.readTime}</div>
+              <div className="modal-meta">Diterbitkan: {selectedArticle.date}</div>
               <div className="modal-body">
                 {selectedArticle.content.split('\n\n').map((para, idx) => {
                   if (para.startsWith('- ') || para.match(/^\d\./)) {
