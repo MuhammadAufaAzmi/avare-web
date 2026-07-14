@@ -68,12 +68,21 @@ Dengan tekstur gel yang tidak lengket dan nyaman digunakan sepanjang hari, kombi
   }
 ];
 
+const checkoutProducts = [
+  { name: 'AVARE Skin Rescue Gel (Produk Biasa)', price: 22000 },
+  { name: 'Bundling 50 Pcs', price: 935000 },
+  { name: 'Eco Companion Kit (Pot, Media Tanam & Seed Paper)', price: 17000 }
+];
+
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
   
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  
+  const [selectedProductIdx, setSelectedProductIdx] = useState(0);
+  const [orderQuantity, setOrderQuantity] = useState(1);
 
   const handleCheckoutSubmit = (e) => {
     e.preventDefault();
@@ -479,18 +488,37 @@ function App() {
                   <textarea className="form-control" required placeholder="Masukkan alamat lengkap" rows="3"></textarea>
                 </div>
                 <div className="form-group">
-                  <label>Jumlah Pesanan (Tube)</label>
-                  <input type="number" className="form-control" min="1" defaultValue="1" required />
+                  <label>Pilihan Produk</label>
+                  <select 
+                    className="form-control" 
+                    value={selectedProductIdx} 
+                    onChange={(e) => setSelectedProductIdx(Number(e.target.value))}
+                  >
+                    {checkoutProducts.map((p, idx) => (
+                      <option key={idx} value={idx}>{p.name} - Rp {p.price.toLocaleString('id-ID')}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label>Jumlah Pesanan</label>
+                  <input 
+                    type="number" 
+                    className="form-control" 
+                    min="1" 
+                    value={orderQuantity}
+                    onChange={(e) => setOrderQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                    required 
+                  />
                 </div>
                 
                 <div className="checkout-summary">
                   <div className="summary-row">
                     <span>Harga Satuan</span>
-                    <span>Rp 18.000</span>
+                    <span>Rp {checkoutProducts[selectedProductIdx].price.toLocaleString('id-ID')}</span>
                   </div>
                   <div className="summary-row total">
                     <span>Total Pembayaran</span>
-                    <span>Rp 18.000</span>
+                    <span>Rp {(checkoutProducts[selectedProductIdx].price * orderQuantity).toLocaleString('id-ID')}</span>
                   </div>
                 </div>
 
