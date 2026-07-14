@@ -486,11 +486,11 @@ function App() {
                 <div className="checkout-summary">
                   <div className="summary-row">
                     <span>Harga Satuan</span>
-                    <span>Rp 129.000</span>
+                    <span>Rp 18.000</span>
                   </div>
                   <div className="summary-row total">
                     <span>Total Pembayaran</span>
-                    <span>Rp 129.000</span>
+                    <span>Rp 18.000</span>
                   </div>
                 </div>
 
